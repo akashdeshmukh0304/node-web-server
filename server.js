@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 			console.log('Unable to append to server.log');
 		}
 	})
-	next()
+	next();
 });
 
 // app.use((req, res, next) => {
@@ -33,13 +33,13 @@ hbs.registerHelper('getCurrentYear', () => {
 
 hbs.registerHelper('screamIt', (text) => {
 	return text.toUpperCase();
-})
+});
 
 app.get('/', (req, res) => {
 	res.render('home.hbs', {
 		welcomeText: 'Welcome Akash!',
 		pageTitle: 'Home'
-	})
+	});
 });
 
 app.get('/about', (req, res) => {
@@ -52,7 +52,7 @@ app.get('/projects', (req, res) => {
 	res.render('projects.hbs', {
 		pageTitle: 'Projects Page',
 		welcomeText: 'Welcome to portfolio page.'
-	})
+	});
 });
 
 app.get('/bad', (req, res) => {
